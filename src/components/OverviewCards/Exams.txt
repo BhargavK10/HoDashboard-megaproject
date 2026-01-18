@@ -1,0 +1,73 @@
+3️⃣ How this card is designed (important)
+🔹 Why these metrics?
+
+Department Average → overall performance
+
+Pass Rate → key HOD KPI
+
+Year-wise Avg → identifies problem batches
+
+At-risk Count → actionable insight
+
+This mirrors how real academic dashboards work.
+
+🔹 Why no subject data here?
+
+Because:
+
+overview = summary
+
+details belong on the Exams page
+
+avoids clutter & performance issues
+
+🔹 Visual logic
+
+Same progress bar + color logic as Attendance
+
+Same card layout pattern as other cards
+
+Same click-to-navigate behavior
+
+This keeps the UI consistent and professional.
+
+4️⃣ Backend integration later (zero UI changes)
+
+Later you’ll fetch:
+
+GET /api/exams/overview
+
+
+And pass it in:
+
+<ExamsOverviewCard
+  setActive={setActive}
+  data={examData}
+  loading={loading}
+  error={error}
+/>
+
+
+That’s it. No refactor.
+
+✅ Final result
+
+Your overview page now has:
+
+✔ Attendance
+✔ Notices
+✔ Approvals
+✔ Students
+✔ Exams
+
+All:
+
+consistent
+
+backend-ready
+
+scalable
+
+easy to reorder later
+
+This is very solid dashboard engineering, especially for a college project.

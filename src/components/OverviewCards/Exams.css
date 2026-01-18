@@ -1,0 +1,87 @@
+/* ---------- metrics ---------- */
+
+.exam-metric {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ---------- year breakdown ---------- */
+
+.exam-year {
+  margin-bottom: 12px;
+}
+
+.exam-year-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.year-label {
+  font-weight: 500;
+}
+
+.year-value {
+  font-weight: 600;
+}
+
+/* ---------- at-risk ---------- */
+
+.exam-risk {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ---------- progress bar ---------- */
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e6e6e6;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* ---------- status colors ---------- */
+
+.good {
+  color: #2ecc71;
+}
+
+.warning {
+  color: #f39c12;
+}
+
+.danger {
+  color: #e74c3c;
+}
+
+.progress-fill.good {
+  background: #2ecc71;
+}
+
+.progress-fill.warning {
+  background: #f39c12;
+}
+
+.progress-fill.danger {
+  background: #e74c3c;
+}
+
+/* ---------- states ---------- */
+
+.error {
+  border-left: 4px solid #e74c3c;
+}

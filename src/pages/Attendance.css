@@ -1,0 +1,86 @@
+.attendance-page {
+  padding: 20px;
+  background: #f1f5f9;
+}
+
+.attendance-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.attendance-filters input,
+.attendance-filters select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.attendance-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.summary-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.summary-title {
+  font-size: 13px;
+  color: #475569;
+}
+
+.summary-value {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.attendance-table {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  padding: 10px 14px;
+}
+
+.table-header {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.table-row:nth-child(even) {
+  background: #f8fafc;
+}
+
+.good {
+  color: #16a34a;
+}
+
+.warning {
+  color: #ca8a04;
+}
+
+.empty {
+  padding: 12px;
+  text-align: center;
+  color: #64748b;
+}
+
+.section-title {
+  margin: 24px 0 10px;
+  font-weight: 600;
+  color: #020617;
+}
+
+.table-header.raw {
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}

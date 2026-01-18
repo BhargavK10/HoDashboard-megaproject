@@ -1,0 +1,143 @@
+/* ---------- list ---------- */
+
+.approvals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.approval-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #64748b;
+    font-size: 0.9rem;
+}
+
+.approval-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.approval-name {
+    font-weight: 600;
+}
+
+.approval-type {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.approval-date {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* ---------- states ---------- */
+
+.clickable {
+    cursor: pointer;
+}
+
+.error {
+    border-left: 4px solid #e74c3c;
+}
+
+.danger {
+    color: #e74c3c;
+}
+
+
+
+/*  -----------------Modal---------------- */
+
+/* ---------- overlay ---------- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* ---------- modal ---------- */
+
+.modal {
+    background: #ffffff;
+    width: 420px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- header ---------- */
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* ---------- body ---------- */
+
+.modal-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leave-body {
+    margin-top: 8px;
+    padding: 10px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* ---------- footer ---------- */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 14px 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn.approve {
+    background: #22c55e;
+    color: white;
+}
+
+.btn.reject {
+    background: #ef4444;
+    color: white;
+}

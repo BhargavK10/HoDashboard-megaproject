@@ -1,0 +1,100 @@
+.exams-page {
+  padding: 20px;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.exams-page h2 {
+  margin-bottom: 16px;
+}
+
+/* Summary */
+.exams-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  min-width: 150px;
+}
+
+.summary-title {
+  font-size: 13px;
+  color: #475569;
+}
+
+.summary-value {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Filters */
+.exams-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.exams-filters select,
+.exams-filters input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Table */
+.exams-table {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  padding: 12px 14px;
+  background: #f8fafc;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  padding: 12px 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.table-row:nth-child(even) {
+  background: #f8fafc;
+}
+
+.table-row:hover {
+  background: #e2e8f0;
+}
+
+.student-name {
+  cursor: pointer;
+}
+
+.good {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.danger {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.empty {
+  padding: 16px;
+  text-align: center;
+  color: #64748b;
+}

@@ -1,0 +1,193 @@
+Great question — this is exactly the right time to think about this. You don’t need backend data yet, but you should structure the component as if real data is coming. That way, when you connect the database later, you won’t rewrite UI logic.
+
+Let’s do this in layers.
+
+1️⃣ Separate data from presentation (most important change)
+
+Right now, your component has hard-coded values.
+Instead, make it accept data as props.
+
+✅ Updated component API (future-proof)
+export default function AttendanceOverviewCard({
+  setActive,
+  data,
+  loading = false,
+  error = null
+}) {
+
+
+This lets you later do:
+
+<AttendanceOverviewCard data={attendanceData} />
+
+2️⃣ Define the expected data shape (mock for now)
+
+Later this will come from your backend, but for now:
+
+const attendanceData = {
+  departmentAvg: 78,
+  classes: [
+    { year: "FY", avg: 82 },
+    { year: "SY", avg: 75 },
+    { year: "TY", avg: 69 }
+  ]
+};
+
+
+This is exactly how APIs usually return data.
+
+3️⃣ Create a reusable “status” helper (color logic)
+
+Instead of hardcoding warning:
+
+function getAttendanceStatus(value) {
+  if (value < 70) return "danger";
+  if (value < 80) return "warning";
+  return "good";
+}
+
+
+CSS classes later:
+
+.good { color: #2ecc71; }
+.warning { color: #f39c12; }
+.danger { color: #e74c3c; }
+
+4️⃣ Add a horizontal percentage bar (easy & clean)
+
+This is not difficult at all and looks very “dashboard-y”.
+
+JSX
+function PercentageBar({ value }) {
+  const status = getAttendanceStatus(value);
+
+  return (
+    <div className="progress-bar">
+      <div
+        className={`progress-fill ${status}`}
+        style={{ width: `${value}%` }}
+      />
+    </div>
+  );
+}
+
+CSS
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 6px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.progress-fill.good {
+  background: #2ecc71;
+}
+
+.progress-fill.warning {
+  background: #f39c12;
+}
+
+.progress-fill.danger {
+  background: #e74c3c;
+}
+
+5️⃣ Final improved AttendanceOverviewCard (ready for backend)
+export default function AttendanceOverviewCard({
+  setActive,
+  data,
+  loading = false,
+  error = null
+}) {
+  if (loading) {
+    return <div className="overview-card">Loading attendance...</div>;
+  }
+
+  if (error) {
+    return <div className="overview-card error">Failed to load data</div>;
+  }
+
+  if (!data) return null;
+
+  return (
+    <div className="overview-card">
+      <h3
+        onClick={() => setActive("Attendance")}
+        className="card-title clickable"
+      >
+        Attendance Overview
+      </h3>
+
+      <div className="card-body">
+        <p>
+          <strong>Department Average:</strong>{" "}
+          <span className={getAttendanceStatus(data.departmentAvg)}>
+            {data.departmentAvg}%
+          </span>
+        </p>
+
+        <PercentageBar value={data.departmentAvg} />
+
+        <div className="card-section">
+          {data.classes.map(cls => (
+            <div key={cls.year} className="class-row">
+              <span>{cls.year}</span>
+              <span className={getAttendanceStatus(cls.avg)}>
+                {cls.avg}%
+              </span>
+              <PercentageBar value={cls.avg} />
+            </div>
+          ))}
+        </div>
+
+        <p className="subtle">
+          Click to view detailed attendance records
+        </p>
+      </div>
+    </div>
+  );
+}
+
+6️⃣ How this connects to backend later (mentally)
+
+Later you’ll do something like:
+
+useEffect(() => {
+  fetch("/api/attendance/overview")
+    .then(res => res.json())
+    .then(data => setAttendanceData(data));
+}, []);
+
+
+And pass it in:
+
+<AttendanceOverviewCard data={attendanceData} />
+
+
+👉 No UI rewrite required
+
+7️⃣ Why this design is excellent for your project
+
+✔ Easy backend integration
+✔ Visual indicators (bars + colors)
+✔ Scales to more classes
+✔ Works for drag-and-drop later
+✔ Looks professional for a college project
+
+If you want next:
+
+Skeleton loaders instead of “Loading…”
+
+Animated number count-up
+
+Tooltips on hover (“Below minimum requirement”)
+
+Similar treatment for Exams / Students cards
+
+You’re building this like a real admin dashboard — good work.

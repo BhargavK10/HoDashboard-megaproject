@@ -1,0 +1,176 @@
+/* .testbutton{
+    color: red;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f8;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.sidebar-item {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sidebar-item:hover {
+  background-color: #334155;
+}
+
+.sidebar-item.active {
+  background-color: #2563eb;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+.topbar {
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/*user dropdown*/
+.user-menu{
+  position: relative;
+}
+
+.dropdown{
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 160px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.dropdown-item{
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover{
+  background-color: #f1f5f9;
+}
+
+.dropdown-divider{
+  height: 1px;
+  background-color: #ddd;
+  margin: 4px 0;
+}
+
+.dropdown-item.logout{
+  color: #dc2626;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat {
+  font-size: 28px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Sections */
+.section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f1f5f9;
+}
+
+/* Notices */
+.notice {
+  border-left: 4px solid #2563eb;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f8fafc;
+}

@@ -1,0 +1,102 @@
+🧠 3️⃣ What this card is preparing you for (important)
+1️⃣ Backend-friendly data shape
+
+Each approval item is an object, not text:
+
+{
+  id: 1,
+  applicant: "Prof. A. Sharma",
+  type: "Casual Leave",
+  date: "12 Mar",
+}
+
+
+Later, backend response might be:
+
+{
+  "id": 1,
+  "teacherId": 42,
+  "leaveType": "Medical",
+  "from": "2025-03-11",
+  "to": "2025-03-13",
+  "reason": "Fever",
+  "status": "PENDING"
+}
+
+
+You’ll map it once, UI stays the same.
+
+2️⃣ Click behavior is already correct
+onClick={() => setActive("Approvals")}
+
+
+Right now:
+
+Takes user to Approvals page
+
+Later:
+
+You’ll replace this with:
+
+open modal
+
+pass req.id
+
+fetch full leave application
+
+Zero refactor needed.
+
+3️⃣ Limited items (overview responsibility)
+approvals.slice(0, 4)
+
+
+Why?
+
+Overview page = summary
+
+Full list lives on Approvals page
+
+Backend can return many entries
+
+4️⃣ UX consistency with other cards
+Card	Pattern
+Attendance	summary → page
+Notices	latest → page
+Approvals	pending → page/modal
+
+Your dashboard now feels cohesive, not random.
+
+🔮 4️⃣ What we’ll do next (when you’re ready)
+
+Next step (natural progression):
+
+Click approval → open modal
+
+Modal shows:
+
+teacher name
+
+leave dates
+
+reason
+
+Buttons:
+
+✅ Approve
+
+❌ Reject
+
+Backend call:
+
+POST /api/leave/{id}/approve
+
+
+The card already supports this future.
+
+✅ Summary
+
+✔ Drop-in ready
+✔ Matches your architecture
+✔ Backend-safe
+✔ Modal-ready
+✔ Real admin dashboard behavior

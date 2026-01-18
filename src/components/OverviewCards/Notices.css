@@ -1,0 +1,78 @@
+/* notices
+
+.notices-button {
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  border-width: 0px;
+}
+
+.notices-button:hover {
+  background-color: #afb6c1;
+}
+
+.notices ul {
+  list-style: none;
+}
+
+.notices li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom:1px solid #64748b;
+} */
+
+/* ---------- button ---------- */
+
+.notices-button {
+  cursor: pointer;
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  background: #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.notices-button:hover {
+  background: #cbd5e1;
+}
+
+/* ---------- list ---------- */
+
+.notices-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #64748b;
+  font-size: 0.9rem;
+}
+
+.notice-title {
+  font-weight: 500;
+}
+
+.notice-date {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ---------- states ---------- */
+
+.error {
+  border-left: 4px solid #e74c3c;
+}
+
+.danger {
+  color: #e74c3c;
+}

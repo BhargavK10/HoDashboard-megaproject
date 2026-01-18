@@ -1,0 +1,121 @@
+.teachers-page {
+  padding: 20px;
+  background: #f1f5f9;
+}
+
+.invite-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.invite-box input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.invite-box button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.invite-box button:hover {
+  background: #1e40af;
+}
+
+.teachers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.teachers-table th,
+.teachers-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.teachers-table th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.status.active {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.status.pending {
+  color: #ca8a04;
+  font-weight: 600;
+}
+
+.assign-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.assign-btn:hover {
+  background: #1e40af;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.modal-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+}
+
+.modal-actions .cancel {
+  background: #64748b;
+}
+
+.modal-actions button:hover {
+  opacity: 0.9;
+}

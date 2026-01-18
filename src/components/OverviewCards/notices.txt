@@ -1,0 +1,108 @@
+🧠 3️⃣ What I changed & WHY (important)
+1️⃣ Data is now external, not hardcoded
+Before ❌
+<li>Mid-Sem Exams — 10 Mar</li>
+
+After ✅
+{
+  id: 1,
+  title: "Mid-Sem Exams",
+  date: "10 Mar",
+}
+
+
+Why?
+This matches how backend APIs work:
+
+[
+  { "id": 1, "title": "...", "date": "..." }
+]
+
+
+When backend comes:
+
+<NoticesOverviewCard data={apiData} />
+
+
+No UI rewrite needed.
+
+2️⃣ .map() instead of static <li>
+notices.slice(0, 5).map(...)
+
+
+Why?
+
+Backend might return 100 notices
+
+Overview should only show latest 4–5
+
+.slice() gives you that control instantly
+
+3️⃣ Loading & error states added
+if (loading) { ... }
+if (error) { ... }
+
+
+Why?
+Real APIs are async:
+
+network delays
+
+server failures
+
+permissions issues
+
+This prevents blank or broken UI later.
+
+4️⃣ Button still routes to Notices page (no modal yet)
+onClick={() => setActive("Notices")}
+
+
+Why?
+
+Keeps UI simple
+
+You’ll add “Create Notice” UI inside Notices page
+
+No logic duplication
+
+5️⃣ Structure matches Attendance card
+
+Both cards now:
+
+accept data
+
+accept loading
+
+accept error
+
+render based on props
+
+This consistency is huge for maintainability.
+
+🔮 4️⃣ Backend integration later (mental model)
+
+Later, in Overview.jsx:
+
+<NoticesOverviewCard
+  setActive={setActive}
+  data={noticesData}
+  loading={loading}
+  error={error}
+/>
+
+
+And fetch from:
+
+GET /api/notices?limit=5
+
+
+That’s it.
+
+⭐ 5️⃣ Why this design is excellent
+
+✔ Clean separation of concerns
+✔ Easy pagination later
+✔ Easy drag-drop later
+✔ Matches real admin dashboards
+✔ Very presentable for college evaluation
